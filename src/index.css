@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+
+
+#root {
+  position: relative;
+  background-color: #fcfdfd;
+  overflow-x: hidden;
+}
+
+.animate-up {
+  animation: animate-up 1s ease-in-out;
+}
+
+@keyframes animate-up {
+  0% {
+    transform: translateY(15%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+.animate-left {
+  animation: animate-left 1s ease-in-out;
+}
+
+@keyframes animate-left {
+  0% {
+    transform: translateX(15%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+
+.fluid-text {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 0.5970149253731344rem + 2.7860696517412933vw, 3rem);
+}
