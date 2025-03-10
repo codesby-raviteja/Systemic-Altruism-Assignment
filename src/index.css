@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 #root {
   position: relative;
   background-color: #fcfdfd;
@@ -44,3 +42,24 @@
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 0.5970149253731344rem + 2.7860696517412933vw, 3rem);
 }
+
+.grid-auto-cols {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.animate-scale {
+  animation: animate-scale 300ms ease-in-out;
+}
+
+
+@keyframes animate-scale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
