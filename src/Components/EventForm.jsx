@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { valitateForms } from "../Constant"
 
-function EventForm({ openEventFrom, setOpenEventForm }) {
+function EventForm({ openEventFrom, setOpenEventForm, setEvents }) {
   const [eventDetails, setEventDetails] = useState({
     title: "",
     date: "",
@@ -41,6 +41,7 @@ function EventForm({ openEventFrom, setOpenEventForm }) {
       return
     }
 
+    setEvents((prev) => [...prev, { ...eventDetails, id: crypto.randomUUID() }])
     handleFormClosing()
   }
 
@@ -48,7 +49,7 @@ function EventForm({ openEventFrom, setOpenEventForm }) {
     <div
       className={` ${
         openEventFrom ? "flex" : "hidden"
-      } fixed inset-0  items-center justify-between `}
+      } fixed inset-0  items-center justify-between px-4`}
     >
       <div
         className="absolute z-100 inset-0 bg-gray-600/30"
@@ -56,7 +57,7 @@ function EventForm({ openEventFrom, setOpenEventForm }) {
       ></div>
 
       <form
-        className="w-full animate-sca z-200 max-w-[560px] bg-white   mx-auto rounded-xl shadow-lg  px-6 py-8"
+        className="w-full animate-scale z-200 max-w-[560px] bg-white   mx-auto rounded-xl shadow-lg  px-6 py-8"
         onSubmit={onSubmit}
       >
         <h3 className="text-2xl font-semibold text-center my-4">

@@ -2,18 +2,17 @@ import React, { useState } from "react"
 import { list } from "../Constant"
 import EventList from "../Components/EventList"
 import EventForm from "../Components/EventForm"
+import EventsHeader from "../Components/EventsHeader"
+import EventsFilter from "../Components/EventsFilter"
 
 function Events() {
   const [Events, setEvents] = useState(list)
   const [openEventFrom, setOpenEventForm] = useState(false)
+  const [category, setCategory] = useState("all")
   return (
-    <section className="mt-10">
-      <h2 className="text-2xl sm:text-4xl font-semibold text-center text-orange-300">
-        We Helped Communities Connect & Flourish
-      </h2>
-      <p className="text-lg  sm:text-2xl font-medium text-center mt-4">
-        <span>✦</span> Upcoming Events <span>✦</span>
-      </p>
+    <section className="py-10">
+      <EventsHeader />
+      <EventsFilter category={category} setCategory={setCategory} />
       <div className="flex justify-between py-4 items-center mt-4">
         <span className="text-2xl sm:text-3xl font-semibold">Events</span>
         <button
@@ -26,8 +25,9 @@ function Events() {
       <EventForm
         openEventFrom={openEventFrom}
         setOpenEventForm={setOpenEventForm}
+        setEvents={setEvents}
       />
-      <EventList Events={Events} />
+      <EventList Events={Events} category={category} />
     </section>
   )
 }
