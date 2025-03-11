@@ -29,7 +29,7 @@ function Navbar() {
           <NavLink
             className={({ isActive }) =>
               (isActive && "text-blue-700") +
-              " text-lg font-semibold hover:text-red-400"
+              " text-xl font-semibold hover:text-red-400"
             }
             to={"/"}
           >
@@ -38,7 +38,7 @@ function Navbar() {
           <NavLink
             className={({ isActive }) =>
               (isActive && "text-blue-700") +
-              " text-lg font-semibold hover:text-red-400"
+              " text-xl font-semibold hover:text-red-400"
             }
             to={"about"}
           >
@@ -48,7 +48,7 @@ function Navbar() {
           <NavLink
             className={({ isActive }) =>
               (isActive && "text-blue-700") +
-              " text-lg font-semibold hover:text-red-400"
+              " text-xl font-semibold hover:text-red-400"
             }
             to={"events"}
           >
